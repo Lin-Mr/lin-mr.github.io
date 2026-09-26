@@ -48,22 +48,165 @@
     .nav-links{display:flex;flex-wrap:wrap;gap:21px;font-size:14px;font-weight:600}
     .nav-links a{color:#475568}.nav-links a:hover{color:var(--blue)}
 
-    .hero{padding:70px 0 42px;display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:center}
-    .portrait-card{position:relative}
-    .portrait-frame{padding:10px;background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow);transform:rotate(-1.1deg)}
-    .portrait{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 48%;border-radius:18px}
-    .portrait-tag{position:absolute;right:-12px;bottom:26px;background:#fff;border:1px solid var(--line);box-shadow:0 10px 24px rgba(17,42,72,.12);padding:10px 14px;border-radius:14px;font-size:12px;font-weight:700;color:#435167;transform:rotate(1.1deg)}
-    .eyebrow{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:9px}
-    h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:52px;line-height:1.08;margin:0 0 10px;letter-spacing:-.025em;color:#162334}
-    h1 .cn{font-family:"Noto Serif CJK SC","Songti SC",STSong,serif;font-size:.52em;color:#687487;margin-left:8px;white-space:nowrap}
-    .role{font-size:18px;color:#4f5d70;margin:0 0 22px;line-height:1.55}
-    .intro{font-size:16px;color:#3f4b5d;max-width:720px;margin:0 0 14px}
-    .intro + .intro{margin-top:0}
-    .hero-interests{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px;max-width:760px}
-    .interest{padding:7px 10px;border-radius:999px;background:#f4f7fb;border:1px solid #e2e8f0;color:#4a6077;font-size:12px;font-weight:650}
-    .hero-links{display:flex;flex-wrap:wrap;gap:10px;margin:21px 0 24px}
-    .hero-links a{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border:1px solid #dbe3ed;background:#fff;border-radius:999px;font-size:13px;font-weight:700;box-shadow:0 5px 16px rgba(18,43,72,.045)}
-    .icon{width:15px;height:15px;display:inline-block}
+.hero{
+    padding:70px 0 42px;
+    display:grid;
+    grid-template-columns:300px 1fr;
+    gap:56px;
+    align-items:center;
+}
+
+/* ===== Portrait ===== */
+
+.portrait-card{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* 圆形头像外框 */
+.portrait-frame{
+    width:250px;
+    height:250px;
+    padding:9px;
+    box-sizing:border-box;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:50%;
+    box-shadow:var(--shadow);
+
+    /* 去掉原来的倾斜效果，更适合圆形学术头像 */
+    transform:none;
+}
+
+/* 圆形头像 */
+.portrait{
+    display:block;
+    width:100%;
+    height:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+
+    /* 调整头像在圆形区域中的位置 */
+    object-position:50% 32%;
+
+    border-radius:50%;
+}
+
+/* Visiting @ NTU 标签 */
+.portrait-tag{
+    position:absolute;
+    right:-2px;
+    bottom:18px;
+    background:#fff;
+    border:1px solid var(--line);
+    box-shadow:0 10px 24px rgba(17,42,72,.12);
+    padding:10px 14px;
+    border-radius:14px;
+    font-size:12px;
+    font-weight:700;
+    color:#435167;
+    transform:none;
+}
+
+
+/* ===== Hero Text ===== */
+
+.eyebrow{
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin-bottom:9px;
+}
+
+h1{
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:500;
+    font-size:52px;
+    line-height:1.08;
+    margin:0 0 10px;
+    letter-spacing:-.025em;
+    color:#162334;
+}
+
+h1 .cn{
+    font-family:"Noto Serif CJK SC","Songti SC",STSong,serif;
+    font-size:.52em;
+    color:#687487;
+    margin-left:8px;
+    white-space:nowrap;
+}
+
+.role{
+    font-size:18px;
+    color:#4f5d70;
+    margin:0 0 22px;
+    line-height:1.55;
+}
+
+.intro{
+    font-size:16px;
+    color:#3f4b5d;
+    max-width:720px;
+    margin:0 0 14px;
+}
+
+.intro + .intro{
+    margin-top:0;
+}
+
+
+/* ===== Research Interests ===== */
+
+.hero-interests{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:18px 0 8px;
+    max-width:760px;
+}
+
+.interest{
+    padding:7px 10px;
+    border-radius:999px;
+    background:#f4f7fb;
+    border:1px solid #e2e8f0;
+    color:#4a6077;
+    font-size:12px;
+    font-weight:650;
+}
+
+
+/* ===== Links ===== */
+
+.hero-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:21px 0 24px;
+}
+
+.hero-links a{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 13px;
+    border:1px solid #dbe3ed;
+    background:#fff;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+    box-shadow:0 5px 16px rgba(18,43,72,.045);
+}
+
+.icon{
+    width:15px;
+    height:15px;
+    display:inline-block;
+}
 
     section{scroll-margin-top:75px}
     .section{padding:36px 0 6px}
